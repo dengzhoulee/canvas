@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>绘制矩形</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+
+<script>
+  function draw() {
+    var canvas = document.getElementById('canvas');
+    if (canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+
+      ctx.fillRect(25, 25, 100, 100); // 绘制一个填充的矩形
+      ctx.clearRect(45, 45, 60, 60); // 清除指定矩形区域，让清除部分完全透明。
+      ctx.strokeRect(50, 50, 50, 50); // 绘制一个矩形的边框
+    }
+  }
+
+  window.onload = function() {
+    draw();
+  }
+</script>
+</body>
+</html>

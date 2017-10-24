@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>绘制三角形</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvas" width="150" height="150"></canvas>
+
+<script>
+  /**
+   * 1、首先，你需要创建路径起始点。
+   * 2、然后你使用画图命令去画出路径。
+   * 3、之后你把路径封闭。
+   * 4、一旦路径生成，你就能通过描边或填充路径区域来渲染图形。
+   */
+  function draw() {
+    var canvas = document.getElementById('canvas');
+    if (canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+      ctx.beginPath(); // 新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径
+      ctx.moveTo(75, 50); // 将笔触移动到指定的坐标x以及y上
+      ctx.lineTo(100, 75); // 绘制一条从当前位置到指定x以及y位置的直线
+      ctx.lineTo(100, 25);
+      ctx.fill(); // 通过填充路径的内容区域生成实心的图形
+    }
+  }
+
+  window.onload = function() {
+    draw();
+  }
+</script>
+</body>
+</html>
